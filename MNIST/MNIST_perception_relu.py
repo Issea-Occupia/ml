@@ -33,8 +33,6 @@ def drelu(u):
     return (u > 0).astype(np.float32)
 
 def sigmoid(u):
-    # 稳定一点的写法：避免 exp 溢出
-    # 对大正数/大负数都更稳
     out = np.empty_like(u, dtype=np.float32)
     pos = (u >= 0)
     neg = ~pos
